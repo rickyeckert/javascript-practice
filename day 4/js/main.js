@@ -1,126 +1,119 @@
-// document
+// if 
 
-// get elements
-const button = document.querySelector('button'); // get the first button
-
-const buttons = document.querySelectorAll('button'); // get all buttons
-
-// update elements text or html
-button.innerText = '<h1>click me</h1>';
-buttons[1].innerHTML = '<h1>click me</h1>';
-console.log(buttons);
-
-// add or remove classes
-button.classList.add('active');
-button.classList.remove('active');
-
-// update elements style
-button.style.backgroundColor = 'green';
-button.style.color = 'white';
-button.style.padding = '10px';
-button.style.borderRadius = '10px';
-
-// remove elements
-button.remove();
-buttons[1].remove();
-
-
-// create elements
-const newButton = document.createElement('button');
-newButton.innerHTML = '<h1>click me</h1>';
-newButton.classList.add('active');
-newButton.style.backgroundColor = 'green';
-newButton.style.color = 'white';
-
-// append elements / move elements
-document.body.append(newButton);
-
-// add event listeners
-newButton.addEventListener('click', function() {
-        // create elements
-    const newButton = document.createElement('button');
-    newButton.innerHTML = array[index];
-    index += 1;
- 
-
-    // control flow
-    if (index === array.length) {
-        index = 0;
-    } else {
-        console.log('index: ', index);
-    }
-
-
-
-
-    newButton.classList.add('active');
-    newButton.style.backgroundColor = 'green';
-    newButton.style.color = 'white';
-
-    // append elements / move elements
-    document.body.append(newButton);
-});
-
-// data
-const string = 'string';
-const number = 1;
-const boolean = true;
-
-const array = [1, 2, 3];
-const object = {
-    username: 'joe',
-};
-
-let index = 0;
-
-const today = new Date();
-today.setHours(18);
-
-if (today.getHours() < 12) {
-    document.body.style.backgroundColor = 'yellow';
-} else if (today.getHours() < 18) {
-    document.body.style.backgroundColor = 'blue';
+if ('truthy') {
+    console.log('the condition is truthy');
 } else {
-    console.log('good morning');
-    document.body.style.backgroundColor = 'black';
+    console.log('the condition is falsy');
 }
 
-console.log(new Date().getHours());
+// falsy values // no value
+false;
+0;
+'';
+// one for each primitive type
+null;
+undefined;
+NaN;
+
+//  truthy values // some values
+true;
+1.1;
+'string';
+-1;
+// everything not falsy
+
+if (false){
+    console.log('false will not trigger');
+}
+if (0){
+    console.log('0 will not trigger');
+}
+if (''){
+    console.log('empty string will not trigger');
+}
+if (null){
+    console.log('null will not trigger');
+}
+if (undefined){
+    console.log('undefined will not trigger');
+}
+if (NaN){
+    console.log('NaN will not trigger');
+}
+if (true){
+    console.log('true will trigger');
+}
+if (1.1){
+    console.log('1.1 will trigger');
+}
+if ('string'){
+    console.log('string will trigger');
+}
+if (-1){
+    console.log('-1 will trigger');
+}
+if ({}){
+    console.log('object will trigger');
+}
+if ([]){
+    console.log('array will trigger');
+}
 
 
-let timesHovered = 0;
-const colors = ['red', 'green', 'blue'];
+// multiple truthys
+const firstName = 'joe';
+const lastName = 'smith';
 
-newButton.addEventListener('mouseenter', function() {
-    newButton.style.backgroungColor = colors[timesHovered];
-    timesHovered += 1;
-    newButton.innerHTML = `<h1>${timesHovered}</h1>`;
-    if (timesHovered === colors.length) {
-        timesHovered = 0;
-    }
-})
-
-
-
-// if (isNaN(firstNumber - secondNumber)) {
-//     alert('hey this is not a number. please enter digits only.');
-//     firstNumber = prompt('first number');
-//     secondNumber = prompt('second number');
+// both needed
+// if (firstName && lastName){
+//     console.log('firstName and lastName is truthy')
 // }
 
-// const firstNumber = prompt('first number');
-// const secondNumber = prompt('second number');
-// alert(firstNumber - secondNumber);
+// either/or
+// if (firstName || lastName) {
+//     console.log('firstName or lastName is truthy')
+// }
 
-const firstNumber = getValidDigit('first');
-const secondNumber = getValidDigit('second');
-alert(firstNumber - secondNumber);
+// !value = not the value
+if (!firstName || !lastName || '') {
+    alert('you must enter a first and last name');
+}
 
-function getValidDigit(iteration){
-    let number = prompt(`enter ${iteration} number`);
-    if (isNaN(number)) {
-        alert('hey this is not a number. please enter digits only');
-        return getValidDigit(iteration);
-    }
-    return number;
+
+// comparison operators
+// == equal to
+// === equal value and equal type
+// != not equal to
+// !== not equal value or not equal type
+// < less than
+// > greater than
+// <= less than or equal to
+// >= greater than or equal to
+
+if (1 == 1) {
+    console.log('1 == 1');
+}
+
+if (10 > 5) {
+    console.log('10 > 5');
+}
+
+if (10 >= 10) {
+    console.log('10 >= 10');
+}
+
+if (10 == '10') {
+    console.log('10 == \'10\'');
+}
+
+if (5 === '5') {
+    console.log('5 === "5"');
+}
+
+if (10 != '10') {
+    console.log('10 != \'10\'');
+}
+
+if (5 !== '5') {
+    console.log('5 === "5"');
 }
