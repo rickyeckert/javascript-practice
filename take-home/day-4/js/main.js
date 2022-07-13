@@ -1,5 +1,6 @@
 const firstNumber = prompt('First Number');
 const secondNumber = prompt('Second Number');
+
 const firstInt = parseInt(firstNumber);
 const secondInt = parseInt(secondNumber);
 console.log(firstInt);
