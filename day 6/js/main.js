@@ -1,7 +1,7 @@
 function getPokemon(name){
     fetch('https://pokeapi.co/api/v2/pokemon/' + name)
     .then(function(response) {
-    return response.json();
+        return response.json();
     }).then(function(data) {
         console.log(data); 
         const img = document.createElement('img');
